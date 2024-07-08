@@ -1,0 +1,124 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Excel_InvokeCode_예시" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="920,782" sap2010:WorkflowViewState.IdRef="Excel_InvokeCode_예시_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Excel_InvokeCode_예시" sap:VirtualizedContainerService.HintSize="496,702" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Result" />
+      <Variable x:TypeArguments="ui:WorkbookApplication" Name="workbook" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="list_ImageFile">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="NEw List(Of String)" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Invoke Code 예시" sap:VirtualizedContainerService.HintSize="434,591" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" Workbook="[workbook]" WorkbookPath="Test.xlsx">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Invoke Code 예시" sap:VirtualizedContainerService.HintSize="400,481" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Microsoft.Office.Interop.Excel.Workbook wb = null;&#xD;&#xA;Microsoft.Office.Interop.Excel.Worksheet ws = null;&#xD;&#xA;Microsoft.Office.Interop.Excel.Range rng = null;&#xD;&#xA;wb = in_workbook.CurrentWorkbook;&#xD;&#xA;&#xD;&#xA;ws = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[in_SheetName];&#xD;&#xA;&#xD;&#xA;try {&#xD;&#xA;&#x9;rng = ws.UsedRange; // 전체 범위 지정&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;rng.EntireColumn.Hidden = false; //열 숨기기 해제하기&#xD;&#xA;&#x9;rng.EntireRow.Hidden = false; //행 숨기기 해제하기&#xD;&#xA;&#x9;ws.AutoFilterMode = false; // 시트 내 필터 제거&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;rng.EntireColumn.AutoFit(); // 전체 컬럼 AutoFit&#xD;&#xA;&#x9;rng.EntireRow.AutoFit(); // 자동 로우 높이 조절&#xD;&#xA;&#x9;rng.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // 전체 범위 가운데정렬&#xD;&#xA;&#x9;rng.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous; // 테두리 설정&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;rng = ws.Range[ &quot;A12&quot;, ws.Cells[12, ws.UsedRange.Columns.Count] ]; // 헤더 범위 지정&#xD;&#xA;&#x9;rng.Font.Bold = true; // 헤더 굵게&#xD;&#xA;&#x9;rng.Borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeTop].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;ws.Range[&quot;F8&quot;,&quot;H10&quot;].Merge(); // 셀 병합&#xD;&#xA;&#x9;ws.Range[&quot;F8&quot;,&quot;H10&quot;].Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDouble; // 다른 스타일 테두리&#xD;&#xA;&#x9;ws.Range[&quot;F8&quot;,&quot;H10&quot;].Interior.Color = Color.FromArgb(209,178,255); // 배경색 적용&#xD;&#xA;&#x9;ws.Range[&quot;F8&quot;,&quot;H10&quot;].Font.Size = 17; // 글씨 크기 조절&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;rng = ws.Range[in_str_Range];&#xD;&#xA;&#x9;rng.NumberFormat = &quot;#,##0&quot;; // 회계 서식 지정&#xD;&#xA;&#x9;&#xD;&#xA;} catch (Exception e) {&#xD;&#xA;&#x9;Console.WriteLine(e.Message);&#xD;&#xA;} finally {&#xD;&#xA;&#x9;wb.Save();&#x9;&#xD;&#xA;}" DisplayName="Invoke code - 엑셀 폼 수정" sap:VirtualizedContainerService.HintSize="338,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3" Language="CSharp">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_workbook">
+                  <mva:VisualBasicValue x:TypeArguments="ui:WorkbookApplication" ExpressionText="workbook" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_str_Range">
+                  <Literal x:TypeArguments="x:String">D2:D100</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
+                  <Literal x:TypeArguments="x:String">Sheet1</Literal>
+                </InArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Microsoft.Office.Interop.Excel.Workbook wb = null; // 엑셀 워크북 변수 선언&#xD;&#xA;Microsoft.Office.Interop.Excel.Worksheet ws = null; // 엑셀 시트 변수 선언&#xD;&#xA;Microsoft.Office.Interop.Excel.Range rng = null; // 엑셀 범위 변수 선언&#xD;&#xA;wb = in_workbook.CurrentWorkbook; // 인수로 들어온 워크북 변수 할당&#xD;&#xA;&#xD;&#xA;try{ // 에러처리&#xD;&#xA;ws = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[in_SheetName];&#xD;&#xA;&#xD;&#xA;Microsoft.Office.Interop.Excel.Range oRange;&#xD;&#xA;float Left;&#xD;&#xA;float Top;&#xD;&#xA;int Range = 2;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;foreach (String ipath in ImageFilePath){&#xD;&#xA;&#xD;&#xA;oRange = (Microsoft.Office.Interop.Excel.Range)ws.Range[&quot;B&quot;+Range];&#xD;&#xA;Left =(float) ((double)oRange.Left);&#xD;&#xA;Top =(float) ((double)oRange.Top);&#xD;&#xA;&#x9;&#xD;&#xA;ws.Shapes.AddPicture(ipath, Microsoft.Office.Core.MsoTriState.msoTrue, Microsoft.Office.Core.MsoTriState.msoFalse, Left+1, Top+1, 158, 98);&#xD;&#xA;&#x9;//AddPicture(이미지경로, 링크연결유무, 이미지저장유무(이미지를 다운받아 Excel에 같이 저장), Cell왼쪽위치, Cell위쪽위치, Cell오른쪽위치, Cell아래쪽위치)&#xD;&#xA;Range += 1;&#xD;&#xA;&#x9;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;//oRange.RowHeight = ImageSize + 2;&#xD;&#xA;&#x9;&#xD;&#xA;}catch (Exception e){&#xD;&#xA;&#x9;Console.WriteLine(&quot;에러 내용 : &quot;+e.Message);&#xD;&#xA;&#x9;throw e;&#xD;&#xA;}finally{ // 무조건 저장하고 종료&#xD;&#xA;wb.Save(); // 워크북 저장&#xD;&#xA;wb.Close(); // 워크북 종료&#xD;&#xA;}" DisplayName="Invoke code - 엑셀에 링크 이미지 삽입" sap:VirtualizedContainerService.HintSize="338,165" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_workbook">
+                  <mva:VisualBasicValue x:TypeArguments="ui:WorkbookApplication" ExpressionText="workbook" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
+                  <Literal x:TypeArguments="x:String">Sheet1</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_StartRange">
+                  <Literal x:TypeArguments="x:String">B2</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="ImageFilePath">
+                  <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="list_ImageFile" />
+                </InArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+  </Sequence>
+</Activity>
